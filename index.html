@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fitbox | Cifras de bolsillo para planificar el gasto de tu mascota</title>
+<meta name="description" content="Blog educativo independiente sobre el presupuesto de tener un perro o un gato: costos antes de adoptar, fondo para imprevistos veterinarios y cómo comparar opciones sin recomendar marcas.">
+<meta name="author" content="YERSON ALONSO COBOS RIOS">
+<meta name="theme-color" content="#F3EBDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+<style>
+/*
+  fitbox.blog — Hoja de estilos
+  Dirección estética nº 7: Cuaderno de campo naturalista
+  (láminas, etiquetas y anotaciones al margen)
+
+  Paleta propia (no corresponde a ninguna marca):
+    --arena      #F3EBDC  fondo general (arena clara)
+    --papel      #FBF7EE  fichas / láminas
+    --pizarra    #3B5468  azul pizarra (color principal)
+    --tinta      #1F2E3A  texto
+    --mostaza    #C99A2E  acento (solo decorativo / fondos)
+    --mostaza-t  #7A5A12  mostaza oscuro para texto (contraste AA)
+  Tipografía: Gloock (títulos y cifras) + Albert Sans (texto).
+  Ilustración: láminas naturalistas en acuarela plana a dos tonos
+  (pizarra + mostaza): huellas, collares, comederos, cartillas.
+*/
+
+:root {
+  --arena: #F3EBDC;
+  --arena-2: #EADFCB;
+  --papel: #FBF7EE;
+  --pizarra: #3B5468;
+  --pizarra-2: #5E7587;
+  --pizarra-claro: #DCE3E8;
+  --tinta: #1F2E3A;
+  --tinta-suave: #4A5966;
+  --mostaza: #C99A2E;
+  --mostaza-claro: #F1DFB0;
+  --mostaza-t: #7A5A12;
+  --linea: #D8CCB4;
+  --radio: 14px;
+  --radio-s: 8px;
+  --sombra: 0 1px 2px rgba(31,46,58,.06), 0 6px 18px rgba(31,46,58,.07);
+  --sombra-h: 0 2px 4px rgba(31,46,58,.08), 0 12px 28px rgba(31,46,58,.10);
+  --serif: "Gloock", Georgia, "Times New Roman", serif;
+  --sans: "Albert Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ancho: 1180px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--arena);
+  background-image:
+    radial-gradient(rgba(59,84,104,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: var(--pizarra); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--tinta); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--mostaza); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.15; color: var(--tinta); letter-spacing: -.005em; }
+h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); margin: 0 0 .5em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.15rem); margin: 1.6em 0 .55em; }
+h3 { font-size: 1.3rem; margin: 1.4em 0 .4em; }
+p { margin: 0 0 1em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.saltar { position: absolute; left: -999px; top: 0; background: var(--tinta); color: #fff; padding: .6rem 1rem; z-index: 100; }
+.saltar:focus { left: 1rem; top: 1rem; }
+.contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .contenedor { padding: 0 28px; } }
+
+/* ---------- Aviso superior (solo inicio) ---------- */
+.aviso-superior {
+  background: var(--pizarra);
+  color: #F6F1E6;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.aviso-superior .contenedor { padding-top: .8rem; padding-bottom: .8rem; display: flex; gap: .9rem; align-items: flex-start; }
+.aviso-superior p { margin: 0 0 .25rem; }
+.aviso-superior strong { color: #fff; }
+.aviso-superior .sello-mini { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1.5px dashed var(--mostaza-claro); display: grid; place-items: center; font-family: var(--serif); color: var(--mostaza-claro); font-size: 1.05rem; }
+
+/* ---------- Cabecera ---------- */
+.cabecera { background: var(--papel); border-bottom: 1px solid var(--linea); }
+.cabecera .contenedor { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .9rem 1.5rem; padding-top: 1rem; padding-bottom: 1rem; }
+.marca { display: flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--tinta); }
+.marca:hover { color: var(--tinta); }
+.marca svg { width: 46px; height: 46px; flex: none; }
+.marca-texto { display: flex; flex-direction: column; gap: .2rem; }
+.marca-nombre { font-family: var(--serif); font-size: 1.7rem; line-height: 1; }
+.etiqueta-indep {
+  display: inline-block; font-size: .74rem; font-weight: 600; letter-spacing: .02em;
+  color: var(--pizarra); background: var(--pizarra-claro);
+  padding: .18rem .55rem; border-radius: 6px 6px 6px 0;
+}
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem; }
+.nav a {
+  display: block; padding: .45rem .8rem; border-radius: 999px; text-decoration: none;
+  font-size: .95rem; font-weight: 500; color: var(--tinta-suave);
+}
+.nav a:hover { background: var(--arena); color: var(--tinta); }
+.nav a[aria-current="page"] { background: var(--tinta); color: var(--papel); }
+
+/* ---------- Pestañas / sellos ---------- */
+.pestana {
+  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: .3rem .75rem .28rem; border-radius: 9px 9px 0 0; background: var(--pizarra); color: #F6F1E6;
+}
+.pestana.mostaza { background: var(--mostaza-claro); color: var(--mostaza-t); }
+.pestana.claro { background: var(--pizarra-claro); color: var(--pizarra); }
+.pestana.arena { background: var(--arena-2); color: var(--tinta); }
+.sello {
+  width: 92px; height: 92px; border-radius: 50%; flex: none;
+  border: 2px solid currentColor; color: var(--pizarra);
+  display: grid; place-items: center; text-align: center; position: relative;
+  font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; line-height: 1.25;
+  transform: rotate(-9deg);
+}
+.sello::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1px dashed currentColor; opacity: .7; }
+.sello span { max-width: 64px; }
+.sello.mostaza { color: var(--mostaza-t); }
+
+/* ---------- Inicio: portada ---------- */
+.portada { padding: 2.6rem 0 1.4rem; }
+.portada-rejilla { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 900px) { .portada-rejilla { grid-template-columns: 1.35fr 1fr; gap: 3rem; } }
+.antetitulo { font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--mostaza-t); margin-bottom: .8rem; }
+.portada h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--mostaza-claro) 62%); padding: 0 .1em; }
+.portada .entrada { font-size: 1.15rem; color: var(--tinta-suave); max-width: 38em; }
+.es-noes { display: grid; gap: 1rem; margin-top: 1.6rem; }
+@media (min-width: 600px) { .es-noes { grid-template-columns: 1fr 1fr; } }
+.es-noes > div { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.1rem 1.2rem; box-shadow: var(--sombra); }
+.es-noes h2 { font-size: 1.2rem; margin: 0 0 .5rem; display: flex; align-items: center; gap: .5rem; }
+.es-noes ul { margin: 0; padding-left: 1.1rem; font-size: .96rem; }
+.es-noes li { margin-bottom: .3rem; }
+.es-noes .no h2 { color: var(--pizarra); }
+.lamina-portada {
+  background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio);
+  padding: 1.4rem; box-shadow: var(--sombra); position: relative;
+}
+.lamina-portada .lamina-dibujos { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.lamina-portada figure { margin: 0; }
+.lamina-portada figcaption, .pie-lamina { font-size: .78rem; font-style: italic; color: var(--tinta-suave); border-top: 1px dotted var(--linea); padding-top: .3rem; margin-top: .2rem; }
+.lamina-portada .sello { position: absolute; right: -14px; top: -22px; background: var(--papel); }
+.nota-margen { font-size: .88rem; color: var(--tinta-suave); border-left: 3px solid var(--mostaza); padding: .2rem 0 .2rem .8rem; margin-top: 1rem; }
+
+/* ---------- Filtros ---------- */
+.filtros-zona { padding: 1.2rem 0 .6rem; }
+.filtros-cab { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
+.filtros-cab h2 { margin: 0; }
+.filtros { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; padding: .5rem; background: var(--papel); border: 1px solid var(--linea); border-radius: 999px; width: fit-content; max-width: 100%; }
+.filtros button {
+  font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;
+  border: 0; border-radius: 999px; padding: .45rem .95rem; background: transparent; color: var(--tinta-suave);
+}
+.filtros button:hover { background: var(--arena); color: var(--tinta); }
+.filtros button[aria-pressed="true"] { background: var(--pizarra); color: #fff; }
+@media (max-width: 560px) { .filtros { border-radius: var(--radio); } }
+
+/* ---------- Mosaico de fichas ---------- */
+.mosaico { display: grid; gap: 1.2rem; padding: 1rem 0 2.5rem; grid-template-columns: 1fr; }
+@media (min-width: 680px) { .mosaico { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) {
+  .mosaico { grid-template-columns: repeat(6, 1fr); grid-auto-flow: dense; }
+  .ficha:nth-child(1) { grid-column: span 4; grid-row: span 2; }
+  .ficha:nth-child(2) { grid-column: span 2; }
+  .ficha:nth-child(3) { grid-column: span 2; }
+  .ficha:nth-child(4) { grid-column: span 3; }
+  .ficha:nth-child(5) { grid-column: span 3; }
+  .ficha:nth-child(6) { grid-column: span 6; }
+}
+.ficha { display: flex; flex-direction: column; }
+.ficha[hidden] { display: none; }
+.ficha-cuerpo {
+  flex: 1; background: var(--papel); border: 1px solid var(--linea); border-radius: 0 var(--radio) var(--radio) var(--radio);
+  padding: 1.25rem 1.3rem 1.2rem; box-shadow: var(--sombra); display: flex; flex-direction: column; gap: .6rem;
+  transition: box-shadow .2s, transform .2s;
+}
+.ficha:hover .ficha-cuerpo { box-shadow: var(--sombra-h); transform: translateY(-2px); }
+.ficha-cifra { font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 1; color: var(--pizarra); display: flex; align-items: baseline; gap: .4rem; }
+.ficha-cifra small { font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--mostaza-t); letter-spacing: .04em; text-transform: uppercase; }
+.ficha h3 { margin: 0; font-size: 1.3rem; }
+.ficha h3 a { color: var(--tinta); text-decoration: none; }
+.ficha h3 a::after { content: ""; position: absolute; inset: 0; }
+.ficha-cuerpo { position: relative; }
+.ficha h3 a:hover { text-decoration: underline; }
+.ficha p { margin: 0; color: var(--tinta-suave); font-size: .97rem; }
+.ficha-pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: .6rem; font-size: .8rem; color: var(--tinta-suave); border-top: 1px dotted var(--linea); padding-top: .55rem; }
+.ficha-dibujo { width: 92px; align-self: flex-end; margin-top: -.4rem; }
+.ficha:nth-child(1) .ficha-cuerpo { background: var(--papel); }
+.ficha:nth-child(1) .ficha-cifra { font-size: clamp(3.6rem, 9vw, 6.2rem); }
+.ficha:nth-child(1) .ficha-dibujo { width: 210px; align-self: center; margin: .4rem 0; }
+.ficha:nth-child(1) h3 { font-size: 1.75rem; }
+.ficha:nth-child(6) .ficha-cuerpo { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+.ficha:nth-child(6) .ficha-texto { flex: 1 1 320px; display: flex; flex-direction: column; gap: .5rem; }
+.ficha:nth-child(6) .ficha-dibujo { width: 120px; align-self: center; margin: 0; }
+.ficha:nth-child(6) .ficha-pie { flex-basis: 100%; }
+.sin-resultados { padding: 1rem; color: var(--tinta-suave); }
+
+/* ---------- Cómo leer ---------- */
+.como-leer { background: var(--papel); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); padding: 2.2rem 0; margin-bottom: 2.5rem; }
+.como-leer-rejilla { display: grid; gap: 1.4rem; }
+@media (min-width: 800px) { .como-leer-rejilla { grid-template-columns: 1fr 2fr; align-items: start; } }
+.como-leer h2 { margin-top: 0; }
+.pasos { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+@media (min-width: 600px) { .pasos { grid-template-columns: repeat(3, 1fr); } }
+.pasos li { border: 1px dashed var(--pizarra-2); border-radius: var(--radio); padding: 1rem; background: var(--arena); }
+.pasos b { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; color: var(--mostaza-t); display: block; line-height: 1; margin-bottom: .3rem; }
+
+/* ---------- Artículo ---------- */
+.migas { font-size: .85rem; color: var(--tinta-suave); padding: 1.3rem 0 0; }
+.migas a { color: var(--tinta-suave); }
+.articulo-cab { padding: 1.2rem 0 1.5rem; display: grid; gap: 1.5rem; align-items: center; }
+@media (min-width: 860px) { .articulo-cab { grid-template-columns: 1fr 260px; } }
+.articulo-cab .entrada { font-size: 1.15rem; color: var(--tinta-suave); }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; font-size: .85rem; color: var(--tinta-suave); align-items: center; }
+.cifra-lamina { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.1rem; box-shadow: var(--sombra); text-align: center; }
+.cifra-lamina .num { font-family: var(--serif); font-size: 3.6rem; color: var(--pizarra); line-height: 1; margin: .4rem 0 .2rem; }
+.cifra-lamina .num-nota { font-size: .8rem; color: var(--tinta-suave); }
+.articulo-rejilla { display: grid; gap: 2rem; padding-bottom: 3rem; }
+@media (min-width: 960px) { .articulo-rejilla { grid-template-columns: minmax(0, 1fr) 260px; gap: 3rem; } }
+.prosa { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.4rem 1.3rem 1.6rem; box-shadow: var(--sombra); max-width: 760px; }
+@media (min-width: 720px) { .prosa { padding: 2.2rem 2.6rem 2.4rem; } }
+.prosa h2:first-child { margin-top: 0; }
+.prosa ul, .prosa ol { padding-left: 1.3rem; }
+.prosa li { margin-bottom: .4rem; }
+.aviso-educativo { font-size: .9rem; background: var(--pizarra-claro); color: var(--tinta); border-radius: var(--radio-s); padding: .75rem 1rem; margin-bottom: 1.6rem; }
+.sabias { position: relative; background: var(--mostaza-claro); border-radius: var(--radio); padding: 1.3rem 1.3rem 1.2rem 1.3rem; margin: 1.8rem 0; }
+.sabias .pestana { position: absolute; top: -1.45rem; left: 1.2rem; background: var(--mostaza-t); color: #fff; }
+.sabias p:last-child { margin-bottom: 0; }
+.tabla-envoltura { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--linea); border-radius: var(--radio-s); }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; background: #fff; }
+caption { text-align: left; font-size: .82rem; font-style: italic; color: var(--tinta-suave); padding: .55rem .8rem; background: var(--arena); }
+th, td { padding: .6rem .8rem; border-bottom: 1px solid var(--linea); text-align: left; vertical-align: top; }
+th { font-weight: 700; color: var(--pizarra); background: var(--papel); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.formula { font-family: var(--serif); font-size: 1.2rem; background: var(--arena); border: 1px dashed var(--pizarra-2); border-radius: var(--radio-s); padding: .9rem 1rem; margin: 1rem 0; text-align: center; color: var(--pizarra); }
+.fuentes { border-top: 2px solid var(--tinta); margin-top: 2.2rem; padding-top: 1rem; }
+.fuentes h2 { font-size: 1.3rem; margin: 0 0 .6rem; }
+.fuentes ol { font-size: .92rem; }
+.exencion-cercana { font-size: .82rem; color: var(--tinta-suave); border-left: 3px solid var(--pizarra-2); padding-left: .7rem; margin: .8rem 0 0; }
+.margen { display: flex; flex-direction: column; gap: 1.2rem; }
+@media (min-width: 960px) { .margen { position: sticky; top: 1.2rem; align-self: start; } }
+.anotacion { font-size: .9rem; color: var(--tinta-suave); border-left: 3px solid var(--mostaza); padding: .1rem 0 .1rem .8rem; }
+.anotacion strong { display: block; color: var(--tinta); font-family: var(--serif); font-weight: 400; font-size: 1.05rem; margin-bottom: .2rem; }
+.relacionados { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1rem 1.1rem; }
+.relacionados h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
+.relacionados ul { list-style: none; margin: 0; padding: 0; font-size: .92rem; }
+.relacionados li { padding: .4rem 0; border-top: 1px dotted var(--linea); }
+
+/* ---------- Acerca de: dos columnas editoriales ---------- */
+.acerca { padding: 2.4rem 0 3rem; }
+.acerca-rejilla { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .acerca-rejilla { grid-template-columns: 340px minmax(0,1fr); gap: 3.5rem; } }
+.acerca-lamina { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.4rem; box-shadow: var(--sombra); }
+@media (min-width: 900px) { .acerca-lamina { position: sticky; top: 1.2rem; align-self: start; } }
+.acerca-lamina dl { margin: 1rem 0 0; font-size: .9rem; }
+.acerca-lamina dt { font-weight: 700; color: var(--pizarra); margin-top: .6rem; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+.acerca-lamina dd { margin: 0; overflow-wrap: anywhere; }
+.acerca-texto { column-gap: 2.5rem; }
+@media (min-width: 1100px) { .acerca-texto .dos-col { columns: 2; } .acerca-texto .dos-col p { break-inside: avoid; } }
+.acerca-texto h2 { border-top: 1px solid var(--linea); padding-top: 1.2rem; }
+.declaracion { background: var(--pizarra); color: #F6F1E6; border-radius: var(--radio); padding: 1.4rem 1.5rem; margin-top: 2rem; }
+.declaracion h2 { color: #fff; border: 0; padding: 0; margin: 0 0 .5rem; }
+.declaracion p:last-child { margin: 0; }
+
+/* ---------- Política editorial: lista numerada con iconos ---------- */
+.editorial { padding: 2.4rem 0 3rem; }
+.editorial-intro { max-width: 46em; }
+.criterios { list-style: none; counter-reset: c; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; }
+.criterios li { counter-increment: c; display: grid; grid-template-columns: 64px 1fr; gap: 1rem; align-items: start; background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.1rem 1.2rem; box-shadow: var(--sombra); }
+.criterios .icono { width: 64px; height: 64px; border-radius: 50%; background: var(--arena); display: grid; place-items: center; position: relative; }
+.criterios .icono svg { width: 40px; height: 40px; }
+.criterios .icono::after { content: counter(c); position: absolute; right: -6px; bottom: -4px; width: 26px; height: 26px; border-radius: 50%; background: var(--pizarra); color: #fff; font-family: var(--serif); font-size: .95rem; display: grid; place-items: center; }
+.criterios h2 { font-size: 1.25rem; margin: .2rem 0 .3rem; }
+.criterios p { margin: 0; color: var(--tinta-suave); font-size: .98rem; }
+
+/* ---------- Páginas legales: documento limpio ---------- */
+.legal { background: #FFFDF8; }
+.documento { max-width: 760px; margin: 0 auto; padding: 2.6rem 16px 3.5rem; }
+.documento h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.documento h2 { font-size: 1.35rem; margin-top: 2rem; }
+.documento .actualizado { font-size: .88rem; color: var(--tinta-suave); border-bottom: 1px solid var(--linea); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+.documento ul { padding-left: 1.3rem; }
+.documento li { margin-bottom: .35rem; }
+.documento .ficha-datos { border-left: 3px solid var(--pizarra); padding: .2rem 0 .2rem 1rem; margin: 1rem 0; }
+.documento .ficha-datos p { margin: 0 0 .25rem; }
+
+/* ---------- Pie ---------- */
+.pie { background: var(--tinta); color: #E9E2D3; font-size: .92rem; margin-top: 0; }
+.pie a { color: #F1DFB0; }
+.pie a:hover { color: #fff; }
+.pie-exencion { border-bottom: 1px solid rgba(255,255,255,.14); }
+.pie-exencion .contenedor { padding-top: 1.4rem; padding-bottom: 1.4rem; display: grid; gap: .8rem; }
+@media (min-width: 800px) { .pie-exencion .contenedor { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+.pie-exencion p { margin: 0; line-height: 1.55; }
+.pie-exencion strong { color: #fff; }
+.pie-rejilla { display: grid; gap: 1.6rem; padding-top: 2rem; padding-bottom: 2rem; }
+@media (min-width: 800px) { .pie-rejilla { grid-template-columns: 1.3fr 1fr 1fr; } }
+.pie h2 { font-family: var(--sans); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #F1DFB0; margin: 0 0 .7rem; }
+.pie ul { list-style: none; margin: 0; padding: 0; }
+.pie li { margin-bottom: .35rem; }
+.pie address { font-style: normal; line-height: 1.7; overflow-wrap: anywhere; }
+.pie-nombre { font-family: var(--serif); font-size: 1.5rem; color: #fff; display: block; margin-bottom: .3rem; }
+.pie-final { border-top: 1px solid rgba(255,255,255,.14); }
+.pie-final .contenedor { padding-top: 1rem; padding-bottom: 1.2rem; font-size: .82rem; color: #C9C1B0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print { .nav, .filtros-zona, .aviso-superior .sello-mini { display: none; } body { background: #fff; } }
+
+/* Ajustes finales */
+.ficha-cifra sup, .cifra-lamina sup { font-size: .42em; vertical-align: super; margin-left: .02em; }
+.ficha:nth-child(1) .ficha-cuerpo { justify-content: center; }
+@media (min-width: 1000px) { .ficha:nth-child(1) .ficha-dibujo { width: 260px; } }
+@media (max-width: 720px) { .lamina-portada .sello { right: 8px; top: -18px; width: 80px; height: 80px; } }
+
+.vista[hidden]{display:none}
+.vista.legal{background:#FFFDF8}
+</style>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjIiIGZpbGw9IiNDOTlBMkUiIG9wYWNpdHk9Ii4zIi8+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNCNTQ2OCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNCNTQ2OCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSIyIDMiLz48dGV4dCB4PSIyNCIgeT0iMzEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHbG9vY2ssIEdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjIwIiBmaWxsPSIjM0I1NDY4Ij5mYjwvdGV4dD48L3N2Zz4=" type="image/svg+xml">
+</head>
+<!--
+  fitbox.blog — Identidad visual propia
+  Dirección estética nº 7: Cuaderno de campo naturalista (láminas, etiquetas y anotaciones al margen).
+  Paleta: arena clara #F3EBDC, papel #FBF7EE, azul pizarra #3B5468, tinta #1F2E3A,
+          acento mostaza #C99A2E (texto en mostaza oscuro #7A5A12). No es la paleta de ninguna marca.
+  Tipografía: Gloock (títulos y cifras) + Albert Sans (texto), vía Google Fonts.
+  Ilustración: láminas naturalistas en acuarela plana a dos tonos (huellas, collares,
+               comederos, cartillas), dibujadas en SVG para este sitio.
+  Modo de color: claro de principio a fin.
+-->
+<body>
+<a class="saltar" href="#contenido" onclick="document.getElementById('contenido').focus();return false;">Saltar al contenido</a>
+<aside class="aviso-superior" id="aviso-inicio" aria-label="Aviso de independencia">
+  <div class="contenedor">
+    <span class="sello-mini" aria-hidden="true">i</span>
+    <div>
+      <p><strong>Exención general:</strong> fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos.</p>
+      <p>El contenido de este sitio es informativo y no constituye asesoramiento psicológico, médico ni financiero. Si atraviesas un malestar emocional importante, consulta a un profesional de la salud. Para cualquier decisión sobre la salud de tu perro o gato, consulta siempre a un médico veterinario.</p>
+    </div>
+  </div>
+</aside>
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="#inicio" aria-label="fitbox, ir al inicio">
+      <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="#C99A2E" opacity=".3"/><circle cx="24" cy="24" r="21" fill="none" stroke="#3B5468" stroke-width="2"/><circle cx="24" cy="24" r="17" fill="none" stroke="#3B5468" stroke-width="1" stroke-dasharray="2 3"/><text x="24" y="31" text-anchor="middle" font-family="Gloock, Georgia, serif" font-size="20" fill="#3B5468">fb</text></svg>
+      <span class="marca-texto">
+        <span class="marca-nombre">fitbox</span>
+        <span class="etiqueta-indep">Blog independiente · Educación financiera y bienestar</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Principal"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#acerca">Acerca de</a></li><li><a href="#politica-editorial">Política editorial</a></li><li><a href="#aviso-legal">Aviso legal</a></li></ul></nav>
+  </div>
+</header>
+<main id="contenido" tabindex="-1">
+<section class="vista" id="inicio" data-vista>
+<section class="portada">
+  <div class="contenedor portada-rejilla">
+    <div>
+      <p class="antetitulo">Cuaderno de campo · Perros y gatos</p>
+      <h1>El gasto de tener una mascota, <em>anotado en cifras de bolsillo</em>.</h1>
+      <p class="entrada">fitbox es un blog educativo independiente. Cada ficha parte de un dato o una proporción y lo explica en pocas líneas para que puedas planificar el presupuesto anual del cuidado, anticipar los costos que no se ven antes de adoptar y preparar un fondo para imprevistos veterinarios.</p>
+      <div class="es-noes">
+        <div class="si">
+          <h2><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M8 32l4-10 16-16 6 6-16 16z" fill="#C99A2E"/><path d="M8 32l4-10 6 6z" fill="#3B5468"/></svg> Qué es fitbox</h2>
+          <ul>
+            <li>Un blog editorial e independiente de divulgación.</li>
+            <li>Fichas con métodos para ordenar el gasto, en porcentajes o base 100.</li>
+            <li>Contenido con fuentes reales y verificables.</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h2><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="8" width="28" height="20" rx="3" fill="none" stroke="#3B5468" stroke-width="3"/><path d="M12 34h16" stroke="#3B5468" stroke-width="3" stroke-linecap="round"/><path d="M10 26L30 10" stroke="#C99A2E" stroke-width="3"/></svg> Qué no es</h2>
+          <ul>
+            <li>No es un banco, una aseguradora ni un sitio oficial.</li>
+            <li>No es una clínica veterinaria ni una tienda: no vende nada.</li>
+            <li>No presta servicios financieros, veterinarios ni terapéuticos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="lamina-portada" aria-label="Lámina ilustrada">
+      <div class="sello mostaza" aria-hidden="true"><span>Sin marcas · sin ventas</span></div>
+      <div class="lamina-dibujos">
+        <figure><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: huella de perro" xmlns="http://www.w3.org/2000/svg"><title>Lámina: huella de perro</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><ellipse cx="60" cy="74" rx="22" ry="18" fill="#3B5468" opacity=".9"/><ellipse cx="33" cy="52" rx="8" ry="11" transform="rotate(-20 33 52)" fill="#3B5468" opacity=".85"/><ellipse cx="49" cy="38" rx="8" ry="11" transform="rotate(-6 49 38)" fill="#3B5468" opacity=".85"/><ellipse cx="71" cy="38" rx="8" ry="11" transform="rotate(6 71 38)" fill="#3B5468" opacity=".85"/><ellipse cx="87" cy="52" rx="8" ry="11" transform="rotate(20 87 52)" fill="#3B5468" opacity=".85"/><ellipse cx="56" cy="70" rx="9" ry="5" fill="#fff" opacity=".18"/></svg><figcaption>Fig. 1 — Huella</figcaption></figure>
+        <figure><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: collar con placa" xmlns="http://www.w3.org/2000/svg"><title>Lámina: collar con placa</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#3B5468" stroke-width="9" opacity=".9"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 5" opacity=".6"/><rect x="54" y="68" width="12" height="8" rx="2" fill="#3B5468"/><circle cx="60" cy="90" r="14" fill="#C99A2E" opacity=".9"/><circle cx="60" cy="90" r="9" fill="none" stroke="#fff" stroke-width="1.5" opacity=".7"/></svg><figcaption>Fig. 2 — Collar y placa</figcaption></figure>
+        <figure><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: comedero con croquetas" xmlns="http://www.w3.org/2000/svg"><title>Lámina: comedero con croquetas</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M22 66h76l-10 26c-1 3-4 5-7 5H39c-3 0-6-2-7-5z" fill="#3B5468" opacity=".9"/><ellipse cx="60" cy="66" rx="38" ry="7" fill="#3B5468"/><ellipse cx="60" cy="65" rx="33" ry="5" fill="#C99A2E" opacity=".95"/><circle cx="44" cy="60" r="4.2" fill="#C99A2E"/><circle cx="53" cy="57" r="4.2" fill="#C99A2E"/><circle cx="62" cy="58" r="4.2" fill="#C99A2E"/><circle cx="71" cy="56" r="4.2" fill="#C99A2E"/><circle cx="79" cy="60" r="4.2" fill="#C99A2E"/><circle cx="49" cy="62" r="4.2" fill="#C99A2E"/><circle cx="67" cy="62" r="4.2" fill="#C99A2E"/><circle cx="58" cy="54" r="4.2" fill="#C99A2E"/><path d="M30 80h60" stroke="#fff" stroke-width="1.5" opacity=".35"/></svg><figcaption>Fig. 3 — Comedero</figcaption></figure>
+        <figure><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: cartilla de control con sellos" xmlns="http://www.w3.org/2000/svg"><title>Lámina: cartilla de control con sellos</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><rect x="30" y="20" width="58" height="80" rx="5" fill="#3B5468" opacity=".92"/><rect x="36" y="26" width="48" height="68" rx="3" fill="#FBF7EE"/><path d="M42 38h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 48h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 58h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 68h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><circle cx="74" cy="78" r="11" fill="none" stroke="#C99A2E" stroke-width="3"/><path d="M69 78l4 4 7-8" fill="none" stroke="#C99A2E" stroke-width="3" stroke-linecap="round"/><rect x="25" y="20" width="8" height="80" rx="3" fill="#C99A2E" opacity=".85"/></svg><figcaption>Fig. 4 — Cartilla</figcaption></figure>
+      </div>
+      <p class="nota-margen">Anotación: las cifras de este cuaderno son relativas. Sirven para comparar y repartir, no para prometer ahorros.</p>
+    </div>
+  </div>
+</section>
+
+<section class="filtros-zona" aria-labelledby="titulo-fichas">
+  <div class="contenedor">
+    <div class="filtros-cab">
+      <h2 id="titulo-fichas">Fichas del cuaderno</h2>
+      <p class="meta">6 fichas · actualizadas el 3 de noviembre de 2026</p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar fichas por categoría"><button type="button" data-filtro="todas" aria-pressed="true">Todas</button><button type="button" data-filtro="presupuesto" aria-pressed="false">Presupuesto anual</button><button type="button" data-filtro="adopcion" aria-pressed="false">Antes de adoptar</button><button type="button" data-filtro="imprevistos" aria-pressed="false">Imprevistos</button><button type="button" data-filtro="comparar" aria-pressed="false">Comparar opciones</button></div>
+  </div>
+</section>
+
+<section class="contenedor" aria-label="Listado de fichas">
+  <div class="mosaico" id="mosaico">
+      <article class="ficha" data-cat="presupuesto">
+        <span class="pestana ">Presupuesto anual</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: huella de perro" xmlns="http://www.w3.org/2000/svg"><title>Lámina: huella de perro</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><ellipse cx="60" cy="74" rx="22" ry="18" fill="#3B5468" opacity=".9"/><ellipse cx="33" cy="52" rx="8" ry="11" transform="rotate(-20 33 52)" fill="#3B5468" opacity=".85"/><ellipse cx="49" cy="38" rx="8" ry="11" transform="rotate(-6 49 38)" fill="#3B5468" opacity=".85"/><ellipse cx="71" cy="38" rx="8" ry="11" transform="rotate(6 71 38)" fill="#3B5468" opacity=".85"/><ellipse cx="87" cy="52" rx="8" ry="11" transform="rotate(20 87 52)" fill="#3B5468" opacity=".85"/><ellipse cx="56" cy="70" rx="9" ry="5" fill="#fff" opacity=".18"/></svg></div>
+          <div class="ficha-cifra">100 <small>base</small></div>
+          <h3><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></h3>
+          <p>Suma lo que gastas en un año, convierte cada partida en puntos sobre 100 y descubre dónde se concentra el cuidado de tu perro o gato.</p>
+          <div class="ficha-pie"><span>Lectura de 6 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+      <article class="ficha" data-cat="adopcion">
+        <span class="pestana mostaza">Antes de adoptar</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: silueta de gato sentado" xmlns="http://www.w3.org/2000/svg"><title>Lámina: silueta de gato sentado</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M44 98c-6-16-4-34 6-44l-4-20 12 12h6l12-12-4 20c10 10 12 28 6 44z" fill="#3B5468" opacity=".9"/><path d="M78 96c14 0 18-10 12-18" fill="none" stroke="#3B5468" stroke-width="6" stroke-linecap="round" opacity=".9"/><circle cx="54" cy="58" r="2.6" fill="#C99A2E"/><circle cx="68" cy="58" r="2.6" fill="#C99A2E"/><path d="M50 80h22" stroke="#C99A2E" stroke-width="5" stroke-linecap="round"/><circle cx="61" cy="86" r="4" fill="#C99A2E"/></svg></div>
+          <div class="ficha-cifra">1.<sup>er</sup> <small>año</small></div>
+          <h3><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></h3>
+          <p>Identificación, primeras visitas, accesorios de llegada y adaptación de la casa: el primer año tiene su propia lista de gastos.</p>
+          <div class="ficha-pie"><span>Lectura de 5 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+      <article class="ficha" data-cat="imprevistos">
+        <span class="pestana claro">Imprevistos</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: cartilla de control con sellos" xmlns="http://www.w3.org/2000/svg"><title>Lámina: cartilla de control con sellos</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><rect x="30" y="20" width="58" height="80" rx="5" fill="#3B5468" opacity=".92"/><rect x="36" y="26" width="48" height="68" rx="3" fill="#FBF7EE"/><path d="M42 38h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 48h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 58h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 68h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><circle cx="74" cy="78" r="11" fill="none" stroke="#C99A2E" stroke-width="3"/><path d="M69 78l4 4 7-8" fill="none" stroke="#C99A2E" stroke-width="3" stroke-linecap="round"/><rect x="25" y="20" width="8" height="80" rx="3" fill="#C99A2E" opacity=".85"/></svg></div>
+          <div class="ficha-cifra">÷12 <small>meses</small></div>
+          <h3><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></h3>
+          <p>Una meta realista, dividida entre los meses que tienes: así se arma un fondo para urgencias sin depender de cifras genéricas.</p>
+          <div class="ficha-pie"><span>Lectura de 5 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+      <article class="ficha" data-cat="comparar">
+        <span class="pestana arena">Comparar opciones</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: comedero con croquetas" xmlns="http://www.w3.org/2000/svg"><title>Lámina: comedero con croquetas</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M22 66h76l-10 26c-1 3-4 5-7 5H39c-3 0-6-2-7-5z" fill="#3B5468" opacity=".9"/><ellipse cx="60" cy="66" rx="38" ry="7" fill="#3B5468"/><ellipse cx="60" cy="65" rx="33" ry="5" fill="#C99A2E" opacity=".95"/><circle cx="44" cy="60" r="4.2" fill="#C99A2E"/><circle cx="53" cy="57" r="4.2" fill="#C99A2E"/><circle cx="62" cy="58" r="4.2" fill="#C99A2E"/><circle cx="71" cy="56" r="4.2" fill="#C99A2E"/><circle cx="79" cy="60" r="4.2" fill="#C99A2E"/><circle cx="49" cy="62" r="4.2" fill="#C99A2E"/><circle cx="67" cy="62" r="4.2" fill="#C99A2E"/><circle cx="58" cy="54" r="4.2" fill="#C99A2E"/><path d="M30 80h60" stroke="#fff" stroke-width="1.5" opacity=".35"/></svg></div>
+          <div class="ficha-cifra">1 <small>día</small></div>
+          <h3><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></h3>
+          <p>El precio del envase engaña: lo que importa es cuántos días dura con la ración que indica la etiqueta.</p>
+          <div class="ficha-pie"><span>Lectura de 5 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+      <article class="ficha" data-cat="imprevistos">
+        <span class="pestana claro">Imprevistos</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: frasco de ahorro para imprevistos" xmlns="http://www.w3.org/2000/svg"><title>Lámina: frasco de ahorro para imprevistos</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><rect x="38" y="22" width="44" height="12" rx="3" fill="#C99A2E"/><path d="M34 38c0-3 2-5 5-5h42c3 0 5 2 5 5v52c0 6-4 10-10 10H44c-6 0-10-4-10-10z" fill="#3B5468" opacity=".25"/><path d="M34 64h52v26c0 6-4 10-10 10H44c-6 0-10-4-10-10z" fill="#3B5468" opacity=".9"/><circle cx="50" cy="58" r="7" fill="#C99A2E" opacity=".95"/><circle cx="66" cy="54" r="7" fill="#C99A2E" opacity=".8"/><path d="M42 44v14" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"/><rect x="48" y="76" width="24" height="12" rx="2" fill="#FBF7EE" opacity=".9"/><path d="M60 79v6M57 82h6" stroke="#3B5468" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div class="ficha-cifra">3 <small>caminos</small></div>
+          <h3><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></h3>
+          <p>Ahorrar por tu cuenta, contratar un seguro o combinar ambos: preguntas clave para comparar sin dejarte llevar por la publicidad.</p>
+          <div class="ficha-pie"><span>Lectura de 6 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+      <article class="ficha" data-cat="comparar">
+        <span class="pestana arena">Comparar opciones</span>
+        <div class="ficha-cuerpo">
+          <div class="ficha-dibujo"><svg viewBox="0 0 120 120" role="img" aria-label="Lámina: collar con placa" xmlns="http://www.w3.org/2000/svg"><title>Lámina: collar con placa</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#3B5468" stroke-width="9" opacity=".9"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 5" opacity=".6"/><rect x="54" y="68" width="12" height="8" rx="2" fill="#3B5468"/><circle cx="60" cy="90" r="14" fill="#C99A2E" opacity=".9"/><circle cx="60" cy="90" r="9" fill="none" stroke="#fff" stroke-width="1.5" opacity=".7"/></svg></div>
+          <div class="ficha-texto"><div class="ficha-cifra">1 <small>mes de uso</small></div>
+          <h3><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></h3>
+          <p>Divide el precio por los meses que dura y compara servicios por lo que incluyen, no por el precio de vitrina.</p></div>
+          <div class="ficha-pie"><span>Lectura de 5 min</span><span>Ficha educativa</span></div>
+        </div>
+      </article>
+  </div>
+  <p class="sin-resultados" id="sin-resultados" hidden>No hay fichas en esta categoría por ahora.</p>
+</section>
+
+<section class="como-leer" aria-labelledby="como-leer">
+  <div class="contenedor como-leer-rejilla">
+    <div>
+      <h2 id="como-leer">Cómo leer una cifra de bolsillo</h2>
+      <p>Nuestras cifras no son precios. Son proporciones, fórmulas o datos de normativa que puedes aplicar a tu propia realidad, sea cual sea tu moneda o tu ciudad.</p>
+    </div>
+    <ol class="pasos">
+      <li><b>1</b>Partimos de un dato verificable o de una proporción explicada (base 100 o porcentaje).</li>
+      <li><b>2</b>Explicamos de dónde sale y qué no dice: sus límites importan tanto como el número.</li>
+      <li><b>3</b>Proponemos un ejercicio para que calcules tu propia cifra con tus precios reales.</li>
+    </ol>
+  </div>
+</section>
+</section>
+<section class="vista" id="acerca" data-vista hidden>
+<div class="contenedor acerca">
+  <div class="acerca-rejilla">
+    <aside class="acerca-lamina" aria-label="Ficha del blog">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: gato sentado junto a un collar" xmlns="http://www.w3.org/2000/svg"><title>Lámina: gato sentado junto a un collar</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M44 98c-6-16-4-34 6-44l-4-20 12 12h6l12-12-4 20c10 10 12 28 6 44z" fill="#3B5468" opacity=".9"/><path d="M78 96c14 0 18-10 12-18" fill="none" stroke="#3B5468" stroke-width="6" stroke-linecap="round" opacity=".9"/><circle cx="54" cy="58" r="2.6" fill="#C99A2E"/><circle cx="68" cy="58" r="2.6" fill="#C99A2E"/><path d="M50 80h22" stroke="#C99A2E" stroke-width="5" stroke-linecap="round"/><circle cx="61" cy="86" r="4" fill="#C99A2E"/></svg>
+      <p class="pie-lamina">Lámina de cuaderno — ilustración propia del sitio.</p>
+      <dl>
+        <dt>Sitio</dt><dd>fitbox.blog</dd>
+        <dt>Titular y editor</dt><dd>YERSON ALONSO COBOS RIOS</dd>
+        <dt>Dirección</dt><dd>Av. Italia 1449, Región Metropolitana, Chile</dd>
+        <dt>Teléfono</dt><dd><a href="tel:+56954007845">+56 9 5400 7845</a></dd>
+        <dt>Correo</dt><dd><a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a></dd>
+      </dl>
+    </aside>
+    <div class="acerca-texto">
+      <span class="pestana claro">Acerca de nosotros</span>
+      <h1>Un cuaderno para pensar el gasto de cuidar a un perro o a un gato</h1>
+      <p class="entrada">fitbox es un blog editorial independiente. Lo edita y mantiene una persona: YERSON ALONSO COBOS RIOS, titular del sitio fitbox.blog. No hay un equipo detrás ni una empresa del sector de las mascotas.</p>
+
+      <h2>Objetivo del blog</h2>
+      <div class="dos-col">
+        <p>Queremos que quien convive con un perro o un gato, o está pensando en adoptar, pueda anticipar el gasto con calma y sin culpa. Muchos costos del cuidado son previsibles, pero aparecen en momentos distintos del año; otros son imprevistos y conviene tener un plan para ellos.</p>
+        <p>Por eso publicamos “cifras de bolsillo”: fichas breves que parten de un dato o una proporción, lo explican y lo convierten en un ejercicio que cada lector puede adaptar a sus propios precios. No recomendamos marcas, tiendas, clínicas ni seguros concretos.</p>
+      </div>
+
+      <h2>Método de elaboración</h2>
+      <div class="dos-col">
+        <p><strong>Fuentes.</strong> Trabajamos con documentos públicos y verificables: normativa vigente, guías de asociaciones veterinarias reconocidas y materiales de educación financiera y de protección al consumidor de organismos públicos. Cada artículo enlaza o identifica sus fuentes.</p>
+        <p><strong>Verificación.</strong> Antes de publicar, contrastamos cada afirmación con su fuente original. Si un dato no puede respaldarse, no se publica o se plantea como idea general, sin cifra.</p>
+        <p><strong>Cifras relativas.</strong> Usamos porcentajes, base 100 y fórmulas. Los ejemplos numéricos son ilustrativos y se señalan como tales; no son promedios de mercado.</p>
+        <p><strong>Revisión.</strong> Las fichas se revisan periódicamente y muestran su fecha de actualización. Si detectas un error, escríbenos a <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a>.</p>
+      </div>
+
+      <section class="declaracion" aria-labelledby="indep">
+        <h2 id="indep">Declaración de independencia</h2>
+        <p>fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. fitbox no es un banco, una aseguradora, una tienda, una clínica veterinaria ni un sitio oficial, y no actúa en nombre de ninguno. No presta servicios financieros, veterinarios ni terapéuticos. Si el sitio muestra publicidad, esta no influye en qué publicamos ni en cómo lo escribimos.</p>
+      </section>
+    </div>
+  </div>
+</div>
+</section>
+<section class="vista" id="politica-editorial" data-vista hidden>
+<div class="contenedor editorial">
+  <div class="editorial-intro">
+    <span class="pestana mostaza">Política editorial</span>
+    <h1>Criterios con los que se escribe cada ficha</h1>
+    <p class="entrada">Esta política describe cómo se elige, se verifica y se publica el contenido de fitbox.blog. La aplica su titular y editor, YERSON ALONSO COBOS RIOS.</p>
+  </div>
+  <ol class="criterios"><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M10 8h16l6 6v18H10z" fill="#3B5468" opacity=".85"/><path d="M14 18h14M14 23h14M14 28h9" stroke="#fff" stroke-width="2"/><circle cx="30" cy="30" r="6" fill="#C99A2E"/></svg></span><div><h2>Solo fuentes reales y verificables</h2><p>Cada artículo se apoya en normativa, guías profesionales o materiales de organismos públicos, citados al final. No inventamos estudios, cifras, citas ni autores.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="10" fill="#C99A2E" opacity=".5" stroke="#3B5468" stroke-width="3"/><path d="M26 26l8 8" stroke="#3B5468" stroke-width="4" stroke-linecap="round"/></svg></span><div><h2>Verificación antes de publicar</h2><p>Contrastamos cada dato con su fuente original. Si no podemos respaldarlo, lo eliminamos o lo planteamos como idea general, sin número.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="28" height="22" rx="4" fill="#3B5468" opacity=".85"/><text x="20" y="27" text-anchor="middle" font-family="Gloock, Georgia, serif" font-size="13" fill="#fff">%</text><circle cx="32" cy="10" r="5" fill="#C99A2E"/></svg></span><div><h2>Cifras relativas y ejemplos señalados</h2><p>Preferimos porcentajes, base 100 y fórmulas. Todo ejemplo numérico se identifica como ilustrativo; nunca prometemos ahorros ni resultados.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M20 6v26M8 12h24M12 34h16" stroke="#3B5468" stroke-width="3" stroke-linecap="round"/><path d="M4 22h10c0 3-2 5-5 5s-5-2-5-5z" fill="#C99A2E"/><path d="M26 22h10c0 3-2 5-5 5s-5-2-5-5z" fill="#3B5468"/></svg></span><div><h2>Sin recomendar marcas</h2><p>Explicamos cómo comparar alimentos, accesorios, servicios y seguros por criterios, no por marca. Las menciones a entidades son descriptivas y llevan una exención cercana.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="26" rx="8" ry="7" fill="#3B5468"/><circle cx="10" cy="16" r="3.5" fill="#C99A2E"/><circle cx="16" cy="10" r="3.5" fill="#C99A2E"/><circle cx="24" cy="10" r="3.5" fill="#C99A2E"/><circle cx="30" cy="16" r="3.5" fill="#C99A2E"/></svg></span><div><h2>El veterinario tiene la última palabra</h2><p>No damos indicaciones clínicas. Cuando un tema toca la salud del animal, remitimos a la consulta con un médico veterinario.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="8" width="28" height="20" rx="3" fill="none" stroke="#3B5468" stroke-width="3"/><path d="M12 34h16" stroke="#3B5468" stroke-width="3" stroke-linecap="round"/><path d="M10 26L30 10" stroke="#C99A2E" stroke-width="3"/></svg></span><div><h2>La publicidad no influye en el contenido</h2><p>Si el sitio muestra anuncios, se gestionan por separado del trabajo editorial. Ningún anunciante revisa, encarga ni condiciona artículos, y no publicamos contenido patrocinado sin identificarlo.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M8 32l4-10 16-16 6 6-16 16z" fill="#C99A2E"/><path d="M8 32l4-10 6 6z" fill="#3B5468"/></svg></span><div><h2>Correcciones visibles</h2><p>Cuando corregimos un error relevante, actualizamos la fecha del artículo y, si cambia el sentido de un dato, lo indicamos en el texto.</p></div></li><li><span class="icono"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="28" height="20" rx="3" fill="#3B5468" opacity=".85"/><path d="M6 12l14 10 14-10" fill="none" stroke="#C99A2E" stroke-width="2.5"/></svg></span><div><h2>Lenguaje respetuoso y sin juicio</h2><p>Escribimos en español neutro, con empatía hacia quien tiene dificultades con el dinero. Las dudas y correcciones pueden enviarse a soporte@fitbox.blog.</p></div></li></ol>
+  <p class="nota-margen">Última actualización: 3 de noviembre de 2026. Contacto editorial: <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a> · <a href="tel:+56954007845">+56 9 5400 7845</a>.</p>
+</div>
+</section>
+<section class="vista" id="presupuesto-anual-base-100" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Presupuesto anual</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana ">Presupuesto anual</span>
+      <h1>Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</h1>
+      <p class="entrada">Convertir el gasto del año en una escala de 100 puntos permite ver de un vistazo qué parte se va en alimento, en salud preventiva o en reposiciones, sin importar la moneda ni la ciudad.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 6 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: huella de perro" xmlns="http://www.w3.org/2000/svg"><title>Lámina: huella de perro</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><ellipse cx="60" cy="74" rx="22" ry="18" fill="#3B5468" opacity=".9"/><ellipse cx="33" cy="52" rx="8" ry="11" transform="rotate(-20 33 52)" fill="#3B5468" opacity=".85"/><ellipse cx="49" cy="38" rx="8" ry="11" transform="rotate(-6 49 38)" fill="#3B5468" opacity=".85"/><ellipse cx="71" cy="38" rx="8" ry="11" transform="rotate(6 71 38)" fill="#3B5468" opacity=".85"/><ellipse cx="87" cy="52" rx="8" ry="11" transform="rotate(20 87 52)" fill="#3B5468" opacity=".85"/><ellipse cx="56" cy="70" rx="9" ry="5" fill="#fff" opacity=".18"/></svg>
+      <div class="num">100</div>
+      <figcaption class="num-nota">Todo el gasto anual expresado como 100 puntos</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: ordenar antes de recortar</h2>
+<p>Cuando se habla del costo de tener una mascota suele pensarse en una cifra total. El problema es que ese total mezcla gastos muy distintos: algunos son mensuales (el alimento), otros anuales (un chequeo o una vacuna de refuerzo) y otros aparecen sin aviso. Expresar el año completo en base 100 ayuda a ver la estructura del gasto antes de tomar cualquier decisión.</p>
+
+<h2>Contexto: por qué los gastos anuales se “olvidan”</h2>
+<p>Los gastos que ocurren una o dos veces al año son fáciles de pasar por alto al hacer un presupuesto mensual. Las guías de etapas de vida para perros y para gatos de asociaciones veterinarias como la AAHA proponen, como mínimo, una consulta preventiva al año. Ese tipo de gasto no aparece cada mes, pero forma parte del costo real.</p>
+
+<h2>El método, paso a paso</h2>
+<ol>
+  <li>Reúne los gastos de los últimos 12 meses (o estímalos con precios reales de tu zona).</li>
+  <li>Agrúpalos en pocas partidas: alimento, salud preventiva, higiene, accesorios y reposiciones, servicios (paseo, guardería, peluquería) y aporte al fondo de imprevistos.</li>
+  <li>Divide cada partida por el total y multiplica por 100. El resultado son “puntos” de tu año.</li>
+  <li>Divide el total por 12 para obtener una cuota mensual que incluya también lo anual.</li>
+</ol>
+<div class="formula">Puntos de una partida = (gasto de la partida ÷ gasto total del año) × 100</div>
+
+<div class="tabla-envoltura">
+<table>
+  <caption>Ejemplo ficticio con fines ilustrativos. No representa un promedio ni una recomendación.</caption>
+  <thead><tr><th scope="col">Partida</th><th scope="col" class="num">Puntos (sobre 100)</th><th scope="col">Frecuencia típica</th></tr></thead>
+  <tbody>
+    <tr><td>Alimento</td><td class="num">40</td><td>Mensual</td></tr>
+    <tr><td>Salud preventiva</td><td class="num">20</td><td>Anual o semestral</td></tr>
+    <tr><td>Higiene</td><td class="num">10</td><td>Mensual</td></tr>
+    <tr><td>Accesorios y reposiciones</td><td class="num">10</td><td>Irregular</td></tr>
+    <tr><td>Servicios</td><td class="num">10</td><td>Variable</td></tr>
+    <tr><td>Aporte a imprevistos</td><td class="num">10</td><td>Mensual</td></tr>
+    <tr><th scope="row">Total</th><th class="num">100</th><td></td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>Las guías de vacunación de la WSAVA (Asociación Mundial de Veterinarios de Pequeños Animales) distinguen entre vacunas “esenciales”, recomendadas para todos los perros o gatos, y “no esenciales”, que dependen del estilo de vida y del riesgo de cada animal. Por eso la partida de salud preventiva no es igual para todos: conviene definirla con tu veterinario.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Repite el ejercicio cada año. Si una partida gana muchos puntos de un año a otro, es una señal para revisar qué cambió: una nueva etapa de vida, un cambio de alimento o un servicio nuevo. No se trata de recortar a toda costa, sino de que ninguna partida te tome por sorpresa.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-presupuesto-anual-base-100">
+        <h2 id="fuentes-presupuesto-anual-base-100">Fuentes consultadas</h2>
+        <ol><li>WSAVA Vaccination Guidelines Group. <em>Guidelines for the vaccination of dogs and cats</em>. World Small Animal Veterinary Association. <a href="https://wsava.org" rel="noopener" target="_blank">wsava.org</a> (sección Global Guidelines).</li><li>American Animal Hospital Association (AAHA). <em>Canine Life Stage Guidelines</em> y, junto con la AAFP, <em>Feline Life Stage Guidelines</em>. <a href="https://www.aaha.org" rel="noopener" target="_blank">aaha.org</a>.</li><li>Comisión para el Mercado Financiero de Chile. <em>CMF Educa</em>, materiales de educación financiera sobre presupuesto personal. <a href="https://www.cmfchile.cl/educa" rel="noopener" target="_blank">cmfchile.cl/educa</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>La base 100 no dice si gastas mucho o poco: dice cómo repartes.</p><p class="anotacion"><strong>Recuerda</strong>Los porcentajes del ejemplo son ficticios. Tu reparto real dependerá de la especie, la edad y la salud de tu animal.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista" id="costos-primer-ano-antes-de-adoptar" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Antes de adoptar</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana mostaza">Antes de adoptar</span>
+      <h1>Lo que no se ve antes de adoptar: el gasto del primer año</h1>
+      <p class="entrada">El primer año con un perro o un gato concentra gastos que no se repiten: identificación, primeras vacunas, accesorios de llegada y adaptación del hogar. Conviene contarlos antes de decidir.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 5 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: silueta de gato sentado" xmlns="http://www.w3.org/2000/svg"><title>Lámina: silueta de gato sentado</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M44 98c-6-16-4-34 6-44l-4-20 12 12h6l12-12-4 20c10 10 12 28 6 44z" fill="#3B5468" opacity=".9"/><path d="M78 96c14 0 18-10 12-18" fill="none" stroke="#3B5468" stroke-width="6" stroke-linecap="round" opacity=".9"/><circle cx="54" cy="58" r="2.6" fill="#C99A2E"/><circle cx="68" cy="58" r="2.6" fill="#C99A2E"/><path d="M50 80h22" stroke="#C99A2E" stroke-width="5" stroke-linecap="round"/><circle cx="61" cy="86" r="4" fill="#C99A2E"/></svg>
+      <div class="num">1.<sup>er</sup></div>
+      <figcaption class="num-nota">El año que concentra los gastos de única vez</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: dos presupuestos en uno</h2>
+<p>Adoptar implica dos presupuestos distintos. Uno es el del cuidado recurrente (alimento, higiene, controles). El otro es el de la llegada: gastos que se hacen una sola vez, o casi, y que suelen concentrarse en los primeros meses.</p>
+
+<h2>Contexto: qué suele entrar en la lista de llegada</h2>
+<ul>
+  <li><strong>Identificación y registro</strong>, cuando la normativa local lo exige.</li>
+  <li><strong>Primeras visitas veterinarias</strong>: revisión inicial y, en cachorros y gatitos, una serie de vacunas en varias dosis.</li>
+  <li><strong>Esterilización</strong>, si tu veterinario la indica y no se realizó antes de la adopción.</li>
+  <li><strong>Accesorios de llegada</strong>: cama, comedero y bebedero, collar o arnés, transportadora y, en gatos, arenero y rascador.</li>
+  <li><strong>Adaptación del hogar</strong>: mallas en ventanas o balcones, protección de cables, cierres.</li>
+  <li><strong>Educación y socialización</strong>, si decides apoyarte en un servicio profesional.</li>
+</ul>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>En Chile, la Ley 21.020 sobre tenencia responsable de mascotas y animales de compañía establece obligaciones para quienes cuidan perros y gatos, entre ellas su inscripción en el Registro Nacional de Mascotas y su identificación. Informarse antes de adoptar evita sorpresas en trámites y costos asociados.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Antes de adoptar, haz una lista con dos columnas: “única vez” y “cada año”. Pide precios reales en tu zona para la columna de única vez y súmalos. Después estima la columna anual con el método de la <a href="#presupuesto-anual-base-100">ficha de base 100</a>. Si el total de la primera columna te resulta alto, puedes repartirlo en un plan de ahorro de algunos meses antes de la llegada.</p>
+<p>Adoptar es una decisión de largo plazo. Pensar en el gasto no le quita afecto: le da estabilidad.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-costos-primer-ano-antes-de-adoptar">
+        <h2 id="fuentes-costos-primer-ano-antes-de-adoptar">Fuentes consultadas</h2>
+        <ol><li>Ley N.º 21.020 sobre tenencia responsable de mascotas y animales de compañía (Chile, 2017). Biblioteca del Congreso Nacional de Chile, <a href="https://www.bcn.cl/leychile" rel="noopener" target="_blank">bcn.cl/leychile</a>.</li><li>Registro Nacional de Mascotas, Gobierno de Chile. <a href="https://www.registratumascota.cl" rel="noopener" target="_blank">registratumascota.cl</a>.</li><li>WSAVA Vaccination Guidelines Group. <em>Guidelines for the vaccination of dogs and cats</em>. <a href="https://wsava.org" rel="noopener" target="_blank">wsava.org</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>Separa en dos columnas: gastos de única vez y gastos que se repetirán cada año.</p><p class="anotacion"><strong>Si no vives en Chile</strong>Revisa la normativa de tu país o municipio sobre registro e identificación de mascotas.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista" id="fondo-imprevistos-veterinarios" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Imprevistos</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana claro">Imprevistos</span>
+      <h1>Fondo para imprevistos veterinarios: cómo calcular tu propio número</h1>
+      <p class="entrada">No existe una cifra universal para el fondo de emergencias de una mascota. Sí existe un método para calcular la tuya a partir de precios reales y de lo que puedes apartar cada mes.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 5 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: cartilla de control con sellos" xmlns="http://www.w3.org/2000/svg"><title>Lámina: cartilla de control con sellos</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><rect x="30" y="20" width="58" height="80" rx="5" fill="#3B5468" opacity=".92"/><rect x="36" y="26" width="48" height="68" rx="3" fill="#FBF7EE"/><path d="M42 38h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 48h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 58h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><path d="M42 68h28" stroke="#3B5468" stroke-width="2.4" opacity=".45" stroke-linecap="round"/><circle cx="74" cy="78" r="11" fill="none" stroke="#C99A2E" stroke-width="3"/><path d="M69 78l4 4 7-8" fill="none" stroke="#C99A2E" stroke-width="3" stroke-linecap="round"/><rect x="25" y="20" width="8" height="80" rx="3" fill="#C99A2E" opacity=".85"/></svg>
+      <div class="num">÷12</div>
+      <figcaption class="num-nota">Una meta repartida en cuotas mensuales</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: tu número, no un número</h2>
+<p>Las cifras genéricas sobre cuánto cuesta una urgencia veterinaria cambian mucho según el país, la ciudad, la especie y el problema. En lugar de partir de un promedio, este método parte de tu realidad: lo que cobran cerca de ti y lo que puedes ahorrar.</p>
+
+<h2>Contexto: el fondo de emergencia, aplicado a la mascota</h2>
+<p>La educación financiera recomienda contar con ahorros destinados a imprevistos, separados del gasto corriente. El mismo principio sirve para el cuidado de un animal: un fondo propio evita tener que decidir con prisa cómo pagar una atención urgente.</p>
+
+<h2>El método en tres pasos</h2>
+<ol>
+  <li><strong>Pregunta un rango.</strong> En tu próxima visita, consulta a tu veterinario qué costo aproximado tiene una atención de urgencia básica (consulta fuera de horario, exámenes iniciales). Pide un rango, no un número exacto.</li>
+  <li><strong>Define la meta.</strong> Toma el extremo alto de ese rango como meta inicial del fondo.</li>
+  <li><strong>Reparte en meses.</strong> Decide en cuántos meses quieres completarla y divide.</li>
+</ol>
+<div class="formula">Aporte mensual = meta del fondo ÷ meses para completarla</div>
+<p><em>Ejemplo ficticio:</em> si tu meta equivale a 120 unidades de tu moneda y quieres completarla en 12 meses, tu aporte sería de 10 unidades al mes. Si 10 es demasiado, alarga el plazo a 18 o 24 meses: lo importante es empezar.</p>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>Las recomendaciones de primeros auxilios para mascotas de la AVMA (Asociación Médica Veterinaria Estadounidense) aconsejan tener siempre a mano los números de tu veterinario y de una clínica de urgencias. Prepararse no es solo económico: también es saber a quién llamar.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Cuando uses el fondo, no te culpes: para eso existe. Retoma los aportes en cuanto puedas y revisa la meta una vez al año, porque los precios y la edad de tu animal cambian. Si además estás valorando un seguro, la ficha <a href="#seguro-ahorro-o-mixto">“Seguro, ahorro propio o mixto”</a> explica qué preguntar.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-fondo-imprevistos-veterinarios">
+        <h2 id="fuentes-fondo-imprevistos-veterinarios">Fuentes consultadas</h2>
+        <ol><li>American Veterinary Medical Association (AVMA). <em>Pet first aid</em>, recursos para dueños de mascotas. <a href="https://www.avma.org" rel="noopener" target="_blank">avma.org</a>.</li><li>Comisión para el Mercado Financiero de Chile. <em>CMF Educa</em>, contenidos sobre ahorro e imprevistos. <a href="https://www.cmfchile.cl/educa" rel="noopener" target="_blank">cmfchile.cl/educa</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>Guarda el fondo separado del dinero del día a día para no usarlo sin darte cuenta.</p><p class="anotacion"><strong>Ten a mano</strong>El teléfono de tu veterinario y de la urgencia veterinaria más cercana.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></li><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista" id="comparar-alimento-costo-por-dia" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Comparar opciones</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana arena">Comparar opciones</span>
+      <h1>Comparar alimentos sin mirar la marca: el costo por día</h1>
+      <p class="entrada">Dos envases con precios distintos pueden durar períodos muy distintos, porque la ración diaria recomendada cambia de un alimento a otro. Comparar por día, y no por kilo, da una imagen más fiel.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 5 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: comedero con croquetas" xmlns="http://www.w3.org/2000/svg"><title>Lámina: comedero con croquetas</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><path d="M22 66h76l-10 26c-1 3-4 5-7 5H39c-3 0-6-2-7-5z" fill="#3B5468" opacity=".9"/><ellipse cx="60" cy="66" rx="38" ry="7" fill="#3B5468"/><ellipse cx="60" cy="65" rx="33" ry="5" fill="#C99A2E" opacity=".95"/><circle cx="44" cy="60" r="4.2" fill="#C99A2E"/><circle cx="53" cy="57" r="4.2" fill="#C99A2E"/><circle cx="62" cy="58" r="4.2" fill="#C99A2E"/><circle cx="71" cy="56" r="4.2" fill="#C99A2E"/><circle cx="79" cy="60" r="4.2" fill="#C99A2E"/><circle cx="49" cy="62" r="4.2" fill="#C99A2E"/><circle cx="67" cy="62" r="4.2" fill="#C99A2E"/><circle cx="58" cy="54" r="4.2" fill="#C99A2E"/><path d="M30 80h60" stroke="#fff" stroke-width="1.5" opacity=".35"/></svg>
+      <div class="num">1</div>
+      <figcaption class="num-nota">La unidad justa para comparar alimentos</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: el precio del envase no basta</h2>
+<p>Al comparar alimentos es habitual fijarse en el precio total o en el precio por kilo. Pero cada alimento tiene una densidad energética distinta, y por eso la ración diaria que indica su etiqueta también cambia. Un envase más caro puede durar más días; uno más barato, menos.</p>
+
+<h2>Contexto: qué leer en la etiqueta</h2>
+<ul>
+  <li>Si es un alimento <strong>completo</strong> (puede ser la única fuente de alimentación) o <strong>complementario</strong>. Las guías nutricionales de la FEDIAF, la federación europea de la industria de alimentos para mascotas, explican esta diferencia.</li>
+  <li>La <strong>especie y etapa de vida</strong> para la que está formulado.</li>
+  <li>La <strong>tabla de ración diaria</strong> según el peso del animal.</li>
+  <li>El <strong>contenido neto</strong> del envase, en gramos.</li>
+</ul>
+
+<h2>La fórmula</h2>
+<div class="formula">Costo por día = precio del envase ÷ (gramos del envase ÷ gramos de ración diaria)</div>
+<div class="tabla-envoltura">
+<table>
+  <caption>Ejemplo ficticio en unidades monetarias genéricas. No corresponde a ningún producto real.</caption>
+  <thead><tr><th scope="col"></th><th scope="col" class="num">Envase A</th><th scope="col" class="num">Envase B</th></tr></thead>
+  <tbody>
+    <tr><td>Precio del envase</td><td class="num">100</td><td class="num">160</td></tr>
+    <tr><td>Contenido</td><td class="num">3.000 g</td><td class="num">7.000 g</td></tr>
+    <tr><td>Ración diaria indicada</td><td class="num">100 g</td><td class="num">120 g</td></tr>
+    <tr><td>Días que dura</td><td class="num">30</td><td class="num">58</td></tr>
+    <tr><th scope="row">Costo por día</th><th class="num">3,33</th><th class="num">2,74</th></tr>
+  </tbody>
+</table>
+</div>
+<p>En el ejemplo, el envase con mayor precio resulta más económico por día. El cálculo no dice cuál es mejor para tu animal: solo ordena la comparación.</p>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>La WSAVA propone que la evaluación nutricional forme parte de cada consulta veterinaria, como la “quinta evaluación vital”, junto a la temperatura, el pulso, la respiración y el dolor. Su comité de nutrición también publica recomendaciones para elegir alimento con criterios, no por marca.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Anota los cuatro datos de la etiqueta de las opciones que estés considerando y aplica la fórmula. Luego multiplica el costo por día por 30 para estimar el mes. Lleva esa comparación a tu veterinario: la decisión final debe tener en cuenta la salud de tu perro o gato, no solo el precio.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-comparar-alimento-costo-por-dia">
+        <h2 id="fuentes-comparar-alimento-costo-por-dia">Fuentes consultadas</h2>
+        <ol><li>WSAVA Global Nutrition Committee. <em>Nutritional Assessment Guidelines</em> y recomendaciones para seleccionar alimento para mascotas. <a href="https://wsava.org" rel="noopener" target="_blank">wsava.org</a> (sección Global Guidelines).</li><li>FEDIAF – European Pet Food Industry Federation. <em>Nutritional Guidelines for Complete and Complementary Pet Food for Cats and Dogs</em>. <a href="https://europeanpetfood.org" rel="noopener" target="_blank">europeanpetfood.org</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>La ración de la etiqueta es orientativa. Tu veterinario puede ajustarla según peso, edad y actividad.</p><p class="anotacion"><strong>Ojo</strong>Un cambio de alimento suele hacerse de forma gradual. Consúltalo antes.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></li><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista" id="seguro-ahorro-o-mixto" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Imprevistos</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana claro">Imprevistos</span>
+      <h1>Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</h1>
+      <p class="entrada">Ante los gastos veterinarios imprevistos hay tres caminos generales. Ninguno es mejor para todos; cada uno tiene ventajas, límites y letra pequeña que conviene leer con calma.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 6 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: frasco de ahorro para imprevistos" xmlns="http://www.w3.org/2000/svg"><title>Lámina: frasco de ahorro para imprevistos</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#C99A2E" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#C99A2E" opacity=".18"/><rect x="38" y="22" width="44" height="12" rx="3" fill="#C99A2E"/><path d="M34 38c0-3 2-5 5-5h42c3 0 5 2 5 5v52c0 6-4 10-10 10H44c-6 0-10-4-10-10z" fill="#3B5468" opacity=".25"/><path d="M34 64h52v26c0 6-4 10-10 10H44c-6 0-10-4-10-10z" fill="#3B5468" opacity=".9"/><circle cx="50" cy="58" r="7" fill="#C99A2E" opacity=".95"/><circle cx="66" cy="54" r="7" fill="#C99A2E" opacity=".8"/><path d="M42 44v14" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"/><rect x="48" y="76" width="24" height="12" rx="2" fill="#FBF7EE" opacity=".9"/><path d="M60 79v6M57 82h6" stroke="#3B5468" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="num">3</div>
+      <figcaption class="num-nota">Ahorro propio, seguro o una combinación</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: elegir con preguntas, no con promesas</h2>
+<p>Quien cuida de un perro o un gato puede prepararse para lo inesperado de tres maneras: con un fondo de ahorro propio, con un seguro para mascotas o con una combinación de ambos. Esta ficha no recomienda ninguna opción ni ningún producto: propone las preguntas que ayudan a comparar.</p>
+
+<h2>Contexto: cómo funciona cada camino</h2>
+<ul>
+  <li><strong>Ahorro propio.</strong> El dinero es tuyo y lo usas para lo que necesites. Su límite es el tiempo: al principio el fondo es pequeño.</li>
+  <li><strong>Seguro.</strong> Pagas una prima periódica y, si ocurre un evento cubierto, la aseguradora reembolsa o paga parte del costo según el contrato. Su límite está en las exclusiones y condiciones.</li>
+  <li><strong>Mixto.</strong> Un fondo propio para gastos menores o no cubiertos, y un seguro para eventos de mayor costo.</li>
+</ul>
+
+<h2>Preguntas para leer cualquier contrato</h2>
+<ol>
+  <li>¿Qué cubre y qué excluye expresamente?</li>
+  <li>¿Cómo trata las enfermedades o condiciones preexistentes?</li>
+  <li>¿Hay un período de carencia antes de que empiece la cobertura?</li>
+  <li>¿Existe deducible o copago? ¿Hay un tope anual o por evento?</li>
+  <li>¿Reembolsa después de pagar o paga directamente al prestador?</li>
+  <li>¿Cómo cambian la prima y la renovación con la edad del animal?</li>
+</ol>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>En Chile, las compañías de seguros son fiscalizadas por la Comisión para el Mercado Financiero (CMF), que permite consultar en su sitio las entidades bajo su supervisión. Además, la Ley 19.496 sobre protección de los derechos de los consumidores reconoce el derecho a recibir información veraz y oportuna sobre los servicios ofrecidos, su precio y sus condiciones.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Si estás valorando un seguro, compara su costo anual (prima × 12) con lo que podrías aportar a tu propio fondo en el mismo período, y pregúntate qué parte de los eventos más probables quedaría realmente cubierta. Si tu fondo aún es pequeño, el camino mixto puede ser una transición. Cualquiera que elijas, mantén al día el <a href="#fondo-imprevistos-veterinarios">cálculo de tu fondo</a>.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-seguro-ahorro-o-mixto">
+        <h2 id="fuentes-seguro-ahorro-o-mixto">Fuentes consultadas</h2>
+        <ol><li>Comisión para el Mercado Financiero de Chile (CMF). Información sobre entidades fiscalizadas y educación financiera sobre seguros. <a href="https://www.cmfchile.cl" rel="noopener" target="_blank">cmfchile.cl</a>.</li><li>Ley N.º 19.496 sobre protección de los derechos de los consumidores (Chile). Biblioteca del Congreso Nacional de Chile, <a href="https://www.bcn.cl/leychile" rel="noopener" target="_blank">bcn.cl/leychile</a>.</li><li>Servicio Nacional del Consumidor (SERNAC). Orientación sobre derechos de los consumidores en la contratación de seguros. <a href="https://www.sernac.cl" rel="noopener" target="_blank">sernac.cl</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>Pide siempre las condiciones generales y particulares por escrito antes de contratar.</p><p class="anotacion"><strong>Recuerda</strong>fitbox no vende ni recomienda seguros. Esta ficha solo ordena preguntas.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></li><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: el gasto que se repone</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista" id="accesorios-y-servicios-costo-por-uso" data-vista hidden>
+<div class="contenedor">
+  <p class="migas"><a href="#inicio">Inicio</a> › Cifras de bolsillo › Comparar opciones</p>
+  <header class="articulo-cab">
+    <div>
+      <span class="pestana arena">Comparar opciones</span>
+      <h1>Accesorios y servicios: el gasto que se repone</h1>
+      <p class="entrada">Camas, collares, juguetes o areneros se gastan y se reemplazan; paseos, guarderías o peluquería se pagan por sesión. Calcular el costo por mes de uso y pedir presupuestos por escrito ayuda a comparar con calma.</p>
+      <p class="meta"><span>Por YERSON ALONSO COBOS RIOS</span><span>·</span><span>Actualizado el 3 de noviembre de 2026</span><span>·</span><span>Lectura de 5 min</span></p>
+    </div>
+    <figure class="cifra-lamina">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Lámina: collar con placa" xmlns="http://www.w3.org/2000/svg"><title>Lámina: collar con placa</title><path d="M16 58c4-24 30-38 52-32s38 22 34 44-26 34-50 30-40-18-36-42z" fill="#3B5468" opacity=".22"/><path d="M24 68c2-18 22-30 40-26s30 16 28 34-22 26-40 22-30-12-28-30z" fill="#3B5468" opacity=".18"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#3B5468" stroke-width="9" opacity=".9"/><ellipse cx="60" cy="50" rx="36" ry="22" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 5" opacity=".6"/><rect x="54" y="68" width="12" height="8" rx="2" fill="#3B5468"/><circle cx="60" cy="90" r="14" fill="#C99A2E" opacity=".9"/><circle cx="60" cy="90" r="9" fill="none" stroke="#fff" stroke-width="1.5" opacity=".7"/></svg>
+      <div class="num">1</div>
+      <figcaption class="num-nota">Precio ÷ meses que dura</figcaption>
+    </figure>
+  </header>
+  <div class="articulo-rejilla">
+    <article class="prosa">
+      <p class="aviso-educativo"><strong>Carácter educativo e informativo.</strong> Este artículo no es asesoramiento financiero ni veterinario. Las cifras que aparecen son proporciones o ejemplos ilustrativos, no precios ni promedios de mercado.</p>
+      
+<h2>El tema: lo barato que dura poco</h2>
+<p>Una parte del gasto de una mascota no es alimento ni salud: son los objetos que se desgastan y los servicios que se contratan de vez en cuando. Como son compras irregulares, cuesta presupuestarlas. Un cálculo sencillo las vuelve comparables.</p>
+
+<h2>Accesorios: costo por mes de uso</h2>
+<div class="formula">Costo por mes de uso = precio ÷ meses que dura</div>
+<p><em>Ejemplo ficticio:</em> una cama de 30 unidades que dura 6 meses cuesta 5 por mes de uso; otra de 48 que dura 16 meses cuesta 3. La segunda es más cara en la tienda y más económica en el tiempo. Si no sabes cuánto dura algo, empieza a anotarlo: tu propia experiencia es la mejor fuente.</p>
+
+<h2>Servicios: comparar lo que incluyen</h2>
+<p>Para paseos, guarderías, hoteles o peluquería, el precio por sesión no siempre es comparable. Antes de decidir, pide por escrito:</p>
+<ul>
+  <li>Qué incluye exactamente la tarifa y qué se cobra aparte.</li>
+  <li>Duración real del servicio y número de animales por cuidador.</li>
+  <li>Condiciones de cancelación y qué ocurre ante una emergencia.</li>
+  <li>Requisitos sanitarios que se piden a los animales.</li>
+</ul>
+
+<div class="sabias"><span class="pestana">Sabías que</span>
+<p>En Chile, la Ley 19.496 sobre protección de los derechos de los consumidores reconoce el derecho a una información veraz y oportuna sobre los bienes y servicios ofrecidos, su precio, condiciones de contratación y otras características relevantes. Pedir un presupuesto claro es ejercer ese derecho.</p></div>
+
+<h2>Aplicación práctica</h2>
+<p>Suma el costo por mes de uso de tus accesorios y el gasto mensual promedio en servicios: ese número es la partida de “accesorios y servicios” de tu <a href="#presupuesto-anual-base-100">presupuesto en base 100</a>. Revisarla dos veces al año ayuda a decidir qué reponer y cuándo, sin compras de último minuto.</p>
+
+      <section class="fuentes" aria-labelledby="fuentes-accesorios-y-servicios-costo-por-uso">
+        <h2 id="fuentes-accesorios-y-servicios-costo-por-uso">Fuentes consultadas</h2>
+        <ol><li>Ley N.º 19.496 sobre protección de los derechos de los consumidores (Chile). Biblioteca del Congreso Nacional de Chile, <a href="https://www.bcn.cl/leychile" rel="noopener" target="_blank">bcn.cl/leychile</a>.</li><li>Servicio Nacional del Consumidor (SERNAC). Información sobre derechos del consumidor. <a href="https://www.sernac.cl" rel="noopener" target="_blank">sernac.cl</a>.</li></ol>
+        <p class="exencion-cercana">fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. Las organizaciones e instituciones citadas se mencionan solo como fuentes de consulta.</p>
+      </section>
+    </article>
+    <aside class="margen" aria-label="Anotaciones al margen">
+      <p class="anotacion"><strong>Anotación</strong>Anota la fecha de compra de cada accesorio. Así sabrás cuánto duró de verdad.</p><p class="anotacion"><strong>Seguridad primero</strong>Un accesorio desgastado (collar, arnés) se reemplaza aunque “todavía sirva”.</p>
+      <nav class="relacionados" aria-label="Otras fichas"><h2>Otras fichas</h2><ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100: cómo repartir el gasto de tu mascota</a></li><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar: el gasto del primer año</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios: cómo calcular tu propio número</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimentos sin mirar la marca: el costo por día</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado</a></li></ul></nav>
+    </aside>
+  </div>
+</div>
+</section>
+<section class="vista legal" id="privacidad" data-vista hidden>
+<article class="documento">
+  <h1>Política de privacidad</h1>
+  <p class="actualizado">Última actualización: 3 de noviembre de 2026</p>
+  
+<h2>1. Responsable del tratamiento</h2>
+<div class="ficha-datos">
+  <p><strong>Titular:</strong> YERSON ALONSO COBOS RIOS (persona física)</p>
+  <p><strong>Dirección:</strong> Av. Italia 1449, Región Metropolitana, Chile</p>
+  <p><strong>Teléfono:</strong> <a href="tel:+56954007845">+56 9 5400 7845</a></p>
+  <p><strong>Correo electrónico:</strong> <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a></p>
+  <p><strong>Sitio web:</strong> fitbox.blog</p>
+</div>
+<h2>2. Qué datos puede tratar el sitio</h2>
+<p>fitbox no tiene registros de usuarios, áreas privadas ni formularios para solicitar datos bancarios, contraseñas o documentos de identidad. Como ocurre en la mayoría de los blogs, al visitarlo pueden tratarse los siguientes tipos de datos:</p>
+<ul>
+  <li><strong>Datos técnicos de navegación:</strong> dirección IP, tipo de navegador y dispositivo, sistema operativo, idioma, páginas visitadas, fecha y hora de acceso. El servidor que aloja el sitio suele registrarlos de forma automática por motivos de seguridad y funcionamiento.</li>
+  <li><strong>Datos analíticos:</strong> información agregada sobre cómo se usa el sitio (por ejemplo, páginas más leídas o tiempo de lectura), si se utilizan herramientas de medición de audiencia.</li>
+  <li><strong>Datos publicitarios:</strong> si el sitio muestra anuncios, los proveedores de publicidad pueden usar identificadores y cookies para mostrar, limitar o medir anuncios, de acuerdo con tus preferencias de consentimiento.</li>
+  <li><strong>Datos que nos envías voluntariamente:</strong> si nos escribes a soporte@fitbox.blog, trataremos tu dirección de correo y el contenido del mensaje solo para responderte.</li>
+</ul>
+<h2>3. Finalidades y base</h2>
+<ul>
+  <li>Mantener el sitio en funcionamiento y protegerlo frente a usos indebidos.</li>
+  <li>Conocer, de forma agregada, qué contenidos resultan útiles para mejorarlos.</li>
+  <li>Financiar el sitio mediante publicidad, cuando corresponda y con tu consentimiento cuando sea necesario.</li>
+  <li>Responder a tus consultas.</li>
+</ul>
+<h2>4. Terceros</h2>
+<p>Los proveedores de alojamiento, medición o publicidad que el sitio pueda utilizar tratan los datos según sus propias políticas. fitbox no vende datos personales a terceros.</p>
+<h2>5. Conservación</h2>
+<p>Los datos se conservan solo el tiempo necesario para la finalidad para la que se recogieron o el que exija la ley. Los correos de contacto se eliminan cuando la consulta queda resuelta, salvo que sea necesario conservarlos.</p>
+<h2>6. Tus derechos</h2>
+<p>Puedes solicitar el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos personales, conforme a la normativa chilena de protección de la vida privada y de datos personales, escribiendo a <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a>. También puedes gestionar las cookies como se explica en la <a href="#cookies">Política de cookies</a>.</p>
+<h2>7. Cambios</h2>
+<p>Esta política puede actualizarse. La fecha de la última versión figura al inicio del documento.</p>
+
+</article>
+</section>
+<section class="vista legal" id="cookies" data-vista hidden>
+<article class="documento">
+  <h1>Política de cookies</h1>
+  <p class="actualizado">Última actualización: 3 de noviembre de 2026</p>
+  
+<h2>1. Qué son las cookies</h2>
+<p>Las cookies son pequeños archivos que un sitio web guarda en tu navegador para recordar información sobre tu visita. Tecnologías similares, como el almacenamiento local o los píxeles, cumplen funciones parecidas; en esta política las llamamos a todas “cookies”.</p>
+<h2>2. Tipos de cookies que puede usar este sitio</h2>
+<ul>
+  <li><strong>Técnicas o necesarias:</strong> permiten que el sitio funcione y se muestre correctamente, y recuerdan tus preferencias de consentimiento.</li>
+  <li><strong>Analíticas:</strong> si se activan, ayudan a conocer de forma agregada cuántas personas visitan el sitio y qué páginas leen.</li>
+  <li><strong>Publicitarias:</strong> si el sitio muestra anuncios, los proveedores de publicidad pueden usarlas para mostrar anuncios, evitar que se repitan en exceso y medir su rendimiento. Según tus preferencias, los anuncios pueden ser personalizados o no personalizados.</li>
+</ul>
+<p>Las cookies de terceros son gestionadas por esos proveedores, con sus propias políticas.</p>
+<h2>3. Consentimiento</h2>
+<p>Cuando la normativa lo exija, el sitio te pedirá consentimiento antes de instalar cookies que no sean estrictamente necesarias. Puedes retirarlo o modificarlo en cualquier momento.</p>
+<h2>4. Cómo gestionarlas</h2>
+<p>Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador. Bloquear todas las cookies puede afectar a algunas funciones del sitio. Las opciones suelen encontrarse en los apartados de privacidad o seguridad del navegador.</p>
+<h2>5. Contacto</h2>
+<p>Para dudas sobre esta política, escribe a <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a>. Responsable: YERSON ALONSO COBOS RIOS, Av. Italia 1449, Región Metropolitana, Chile, teléfono <a href="tel:+56954007845">+56 9 5400 7845</a>.</p>
+
+</article>
+</section>
+<section class="vista legal" id="aviso-legal" data-vista hidden>
+<article class="documento">
+  <h1>Aviso legal</h1>
+  <p class="actualizado">Última actualización: 3 de noviembre de 2026</p>
+  
+<h2>1. Titularidad del sitio</h2>
+<p>El sitio web fitbox.blog (en adelante, “el sitio” o “fitbox”) es un blog editorial cuyo titular y responsable es:</p>
+<div class="ficha-datos">
+  <p><strong>Titular:</strong> YERSON ALONSO COBOS RIOS (persona física)</p>
+  <p><strong>Dirección:</strong> Av. Italia 1449, Región Metropolitana, Chile</p>
+  <p><strong>Teléfono:</strong> <a href="tel:+56954007845">+56 9 5400 7845</a></p>
+  <p><strong>Correo electrónico:</strong> <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a></p>
+  <p><strong>Sitio web:</strong> fitbox.blog</p>
+</div>
+<h2>2. Objeto</h2>
+<p>fitbox publica contenido educativo e informativo sobre la planificación del gasto asociado al cuidado de perros y gatos. El sitio no vende productos ni servicios, no gestiona pagos, no ofrece créditos, seguros ni productos financieros y no presta servicios veterinarios ni terapéuticos.</p>
+<h2>3. Ausencia de afiliación</h2>
+<p>fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos. fitbox no es una entidad bancaria, una aseguradora, una tienda, una clínica veterinaria ni un sitio oficial de ningún organismo, y no actúa en nombre de ninguno. Las marcas, organizaciones o instituciones que puedan mencionarse lo son de forma descriptiva y editorial, o como fuente de consulta, y pertenecen a sus respectivos titulares.</p>
+<h2>4. Naturaleza del contenido</h2>
+<p>El contenido de este sitio es informativo y no constituye asesoramiento psicológico, médico ni financiero. Si atraviesas un malestar emocional importante, consulta a un profesional de la salud. Para cualquier decisión sobre la salud de tu perro o gato, consulta siempre a un médico veterinario.</p>
+<p>Las cifras publicadas son proporciones, fórmulas o ejemplos ilustrativos. No constituyen ofertas, cotizaciones, precios de referencia ni promesas de ahorro. Cada persona es responsable de las decisiones que tome a partir de la información del sitio.</p>
+<h2>5. Propiedad intelectual</h2>
+<p>Los textos, ilustraciones, diseño, logotipo y estructura del sitio son originales y pertenecen a su titular, salvo que se indique otra cosa. Se permite citar fragmentos breves con fines informativos, siempre que se mencione la fuente y se enlace al artículo original. No se permite la reproducción total o la explotación comercial sin autorización previa por escrito.</p>
+<h2>6. Enlaces externos</h2>
+<p>El sitio puede enlazar a páginas de terceros, por ejemplo a las fuentes consultadas. fitbox no controla ni se responsabiliza del contenido, la disponibilidad o las políticas de esos sitios.</p>
+<h2>7. Responsabilidad</h2>
+<p>El titular procura que la información sea correcta y esté actualizada, pero no garantiza la ausencia de errores u omisiones. El titular no será responsable de los daños derivados del uso de la información publicada, en la medida en que lo permita la legislación aplicable.</p>
+<h2>8. Legislación aplicable y contacto</h2>
+<p>Este aviso se rige por la legislación de la República de Chile. Para cualquier consulta, escribe a <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a> o llama al <a href="tel:+56954007845">+56 9 5400 7845</a>.</p>
+
+</article>
+</section>
+</main>
+<noscript><style>.vista[hidden]{display:block!important}</style></noscript>
+<footer class="pie">
+  <div class="pie-exencion">
+    <div class="contenedor">
+      <p><strong>Exención general.</strong> fitbox no tiene afiliación, vínculo comercial ni representación oficial con ninguna marca. Contenido con fines educativos e informativos.</p>
+      <p>El contenido de este sitio es informativo y no constituye asesoramiento psicológico, médico ni financiero. Si atraviesas un malestar emocional importante, consulta a un profesional de la salud. Para cualquier decisión sobre la salud de tu perro o gato, consulta siempre a un médico veterinario.</p>
+    </div>
+  </div>
+  <div class="contenedor pie-rejilla">
+    <div>
+      <span class="pie-nombre">fitbox</span>
+      <p>Blog editorial independiente sobre cómo planificar el gasto de tener un perro o un gato. No vende productos ni servicios, no es una clínica veterinaria, una tienda ni una entidad financiera.</p>
+      <address>
+        Titular: YERSON ALONSO COBOS RIOS<br>
+        Av. Italia 1449, Región Metropolitana, Chile<br>
+        Teléfono: <a href="tel:+56954007845">+56 9 5400 7845</a><br>
+        Correo: <a href="mailto:soporte@fitbox.blog">soporte@fitbox.blog</a><br>
+        Sitio: fitbox.blog
+      </address>
+    </div>
+    <nav aria-label="Páginas legales e institucionales">
+      <h2>El sitio</h2>
+      <ul><li><a href="#inicio">Inicio</a></li><li><a href="#acerca">Acerca de nosotros</a></li><li><a href="#politica-editorial">Política editorial</a></li><li><a href="#privacidad">Política de privacidad</a></li><li><a href="#cookies">Política de cookies</a></li><li><a href="#aviso-legal">Aviso legal</a></li></ul>
+    </nav>
+    <nav aria-label="Artículos">
+      <h2>Cifras de bolsillo</h2>
+      <ul><li><a href="#presupuesto-anual-base-100">Presupuesto anual en base 100</a></li><li><a href="#costos-primer-ano-antes-de-adoptar">Lo que no se ve antes de adoptar</a></li><li><a href="#fondo-imprevistos-veterinarios">Fondo para imprevistos veterinarios</a></li><li><a href="#comparar-alimento-costo-por-dia">Comparar alimento por costo diario</a></li><li><a href="#seguro-ahorro-o-mixto">Seguro, ahorro propio o mixto</a></li><li><a href="#accesorios-y-servicios-costo-por-uso">Accesorios y servicios: costo por uso</a></li></ul>
+    </nav>
+  </div>
+  <div class="pie-final">
+    <div class="contenedor">
+      <span>© 2026 fitbox.blog · Titular: YERSON ALONSO COBOS RIOS</span>
+      <span>Contenido educativo e informativo · Sin afiliación con marcas ni entidades</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var botones = document.querySelectorAll('.filtros button');
+  var fichas = document.querySelectorAll('#mosaico .ficha');
+  var vacio = document.getElementById('sin-resultados');
+  botones.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.getAttribute('data-filtro'), visibles = 0;
+      botones.forEach(function(o){ o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      fichas.forEach(function(el){
+        var ok = f === 'todas' || el.getAttribute('data-cat') === f;
+        el.hidden = !ok; if (ok) visibles++;
+      });
+      vacio.hidden = visibles !== 0;
+    });
+  });
+})();
+(function(){
+  var titulos = {"inicio": "fitbox | Cifras de bolsillo para planificar el gasto de tu mascota", "acerca": "Acerca de nosotros | fitbox", "politica-editorial": "Política editorial | fitbox", "presupuesto-anual-base-100": "Presupuesto anual en base 100: cómo repartir el gasto de tu mascota | fitbox", "costos-primer-ano-antes-de-adoptar": "Lo que no se ve antes de adoptar: el gasto del primer año | fitbox", "fondo-imprevistos-veterinarios": "Fondo para imprevistos veterinarios: cómo calcular tu propio número | fitbox", "comparar-alimento-costo-por-dia": "Comparar alimentos sin mirar la marca: el costo por día | fitbox", "seguro-ahorro-o-mixto": "Seguro, ahorro propio o mixto: tres maneras de prepararse para lo inesperado | fitbox", "accesorios-y-servicios-costo-por-uso": "Accesorios y servicios: el gasto que se repone | fitbox", "privacidad": "Política de privacidad | fitbox", "cookies": "Política de cookies | fitbox", "aviso-legal": "Aviso legal | fitbox"};
+  var vistas = document.querySelectorAll('[data-vista]');
+  var nav = document.querySelectorAll('.nav a');
+  function mostrar(primera){
+    var id = (location.hash || '#inicio').slice(1);
+    if (!document.getElementById(id) || !document.getElementById(id).hasAttribute('data-vista')) {
+      if (primera || !id) id = 'inicio'; else return;
+    }
+    vistas.forEach(function(v){ v.hidden = v.id !== id; });
+    nav.forEach(function(a){
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+    document.getElementById('aviso-inicio').hidden = false;
+    document.title = titulos[id] || document.title;
+    if (!primera) window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', function(){ mostrar(false); });
+  mostrar(true);
+})();
+</script>
+</body>
+</html>
